@@ -21,3 +21,15 @@ node_t *parse_csv() {
     return head;
 }
 
+double average(node_t *head) {
+    node_t *currNode = head;
+    double sum = 0;
+    double count = 0;
+    while (currNode) {
+        sum = currNode -> age;
+        ++count;
+        currNode = currNode->next;
+    }
+    return  sum / count;
+}
+
