@@ -52,6 +52,7 @@ int main() {
                 iterate(list);
                 break;
             case 4:
+                //¿Falta?
                 popFirst(** theList)
                 break;
             case 5:
@@ -75,11 +76,13 @@ int main() {
                 break;
             case 11:
                 printOldest(*theList);
+                //No estoy segura de como ponerlo para que imprima el nombre con la edad
                 printf("%s The oldest person is: \n",);
                 break;
             case 12:
                 printYoungest(*theList);
-                printf("%s The youngest person is\n",);
+                //No estoy segura de como ponerlo para que imprima el nombre con la edad
+                printf(" The youngest person is\n",);
                 break;
             case 13:
                 average(*head);
