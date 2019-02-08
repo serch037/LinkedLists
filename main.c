@@ -10,6 +10,9 @@
 
 int main() {
     int input, data;
+    node_t * list = NULL;
+    iterate(list);
+    
     node_t *head = parse_csv();
     do {
         printf("1. Adding an item to the end of the list.\n");
@@ -24,40 +27,67 @@ int main() {
         printf("10. Print the linked list.\n");
         printf("11. Print the oldest person.\n");
         printf("12. Print the youngest person.\n");
-        printf("13. print the average of ages.\n");
-        printf("14. print all names that start with a given letter.\n");
+        printf("13. Print the average of ages.\n");
+        printf("14. Print all names that start with a given letter.\n");
         printf("0. Exit\n");
 
         scanf("%d", &input);
         switch (input) {
             case 1:
-                printf("%s\n",);
+                printf("Give me a Name");
+                scanf("%s", name);
+                printf("Give me an Age");
+                scanf("%s", age);
+                append(age, name, &list);
+                break;
             case 2:
-                printf("%s\n",);
+                iterate(list);
+                break;
             case 3:
-                printf("%s\n",);
+                printf("Give me a Name");
+                scanf("%s", name);
+                printf("Give me an Age");
+                scanf("%s", age);
+                pushFirst(age, name, &list);
+                iterate(list);
+                break;
             case 4:
-                printf("%s\n",);
+                popFirst(** theList)
+                break;
             case 5:
                 printf("%s\n",);
+                break;
             case 6:
                 printf("%s\n",);
+                break;
             case 7:
-                printf("%s\n",);
+                printf("Size of list: %d\n", sizeOfList(&list));
+                break;
             case 8:
                 printf("%s\n",);
+                break;
             case 9:
-                printf("%s\n",);
+                clearList(&list);
+                iterate(list);
+                break;
             case 10:
-                printf("%s\n",);
+                print(list);
+                break;
             case 11:
-                printf("%s\n",);
+                printOldest(*theList);
+                printf("%s The oldest person is: \n",);
+                break;
             case 12:
-                printf("%s\n",);
+                printYoungest(*theList);
+                printf("%s The youngest person is\n",);
+                break;
             case 13:
-                printf("%s\n",);
+                average(*head);
+                //No estoy segura de como ponerlo para que imprima el promedio :(
+                printf("The average of the ages is: \n",);
+                break;
             case 14:
-                printf("\nEnter a character:");
+                printf("\n %p Enter a character:",);
                 char a_char;
                 scanf("%c", &a_char);
                 print_filtered(head, a_char);
