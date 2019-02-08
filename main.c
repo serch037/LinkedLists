@@ -8,10 +8,6 @@
 
 int main () {
    int input, data;
-   
-   int main () {
-   int input, data;
-   
    do {
       printf("1. Adding an item to the end of the list.\n");
       printf("2. Iterating over a list.\n");
@@ -30,7 +26,6 @@ int main () {
       printf("0. Exit\n");
      
       scanf("%d", &input);
-
       switch( input ){
          case 1: printf("%s\n", );
          case 2: printf("%s\n", );
