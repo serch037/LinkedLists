@@ -57,7 +57,11 @@ int main() {
             case 13:
                 printf("%s\n",);
             case 14:
-                printf("%s\n",);
+                printf("Enter a character:");
+                char a_char;
+                scanf("%c", &a_char);
+                print_filtered(head, a_char);
+                break;
         }
     } while (input != 0);
 
