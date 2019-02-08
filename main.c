@@ -1,6 +1,6 @@
-//
-// Created by sergio on 2/8/19.
-//
+// Alberto
+// Sergio 
+// Alexa
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,7 +9,10 @@
 int main () {
    int input, data;
    
-   for (;;) {
+   int main () {
+   int input, data;
+   
+   do {
       printf("1. Adding an item to the end of the list.\n");
       printf("2. Iterating over a list.\n");
       printf("3. Adding an item to the beginning of the list (pushing to the list).\n");
@@ -27,41 +30,24 @@ int main () {
       printf("0. Exit\n");
      
       scanf("%d", &input);
-     
-      if (input == 1) {
-      }
-      else if (input == 2) {
-      }
-      else if (input == 3){
-      }
-      else if (input == 4){
-      } 
-      else if (input == 5){
-      }
-      else if (input == 6){
-      }
-      else if (input == 7){
-      }
-      else if (input == 8){
-      }
-      else if (input == 9){
-      }
-      else if (input == 10){
-      }
-      else if (input == 11){
-      }
-      else if (input == 12){
-      }
-      else if (input == 13){
-      }
-      else if (input == 14){
-      }
-      else if (input == 0){
-         break;
-      }
-      else
-         printf("Please enter valid input.\n");      
-   }
-   
+
+      switch( input ){
+         case 1: printf("%s\n", );
+         case 2: printf("%s\n", );
+         case 3: printf("%s\n", );
+         case 4: printf("%s\n", );
+         case 5: printf("%s\n", );
+         case 6: printf("%s\n", );
+         case 7: printf("%s\n", );
+         case 8: printf("%s\n", );
+         case 9: printf("%s\n", );
+         case 10: printf("%s\n", );
+         case 11: printf("%s\n", );
+         case 12: printf("%s\n", );
+         case 13: printf("%s\n", );
+         case 14: printf("%s\n", );
+      }     
+   } while (input != 0);
+
    return 0;
 }
