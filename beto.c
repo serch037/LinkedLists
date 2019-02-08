@@ -1,18 +1,14 @@
-// A01336656 | JosÈ Alberto Jurado Hern·ndez
+// A01336656 | Jos√© Alberto Jurado Hern√°ndez
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
-struct node {
-    int age;
-    char * name;
-    struct node *next;
-};
-typedef struct node node_t;
+#include "beto.h"
 
 
-void append(int age, char * name, node_t **theList ) {
+
+void append(int age, char *name, node_t **theList) {
   node_t *newS = (node_t *) malloc(sizeof(node_t));
   newS ->age = age;
   newS -> name = name;
@@ -28,14 +24,15 @@ void append(int age, char * name, node_t **theList ) {
   }
 }
 
-void iterate(  node_t * pointerToList ) {
-node_t * temp = pointerToList;
+
+void iterate(node_t *pointerToList) {
+  node_t * temp = pointerToList;
   printf("[");
-    while(  temp != NULL ){
-      printf("%d %s, ", temp->age, temp->name);
-      temp = temp->next;
-    }
-    printf("]\n");
+  while(  temp != NULL ){
+    printf("%d %s, ", temp->age, temp->name);
+    temp = temp->next;
+  }
+  printf("]\n");
 }
 
 void pushFirst(int age, char * name, node_t ** theList) {
