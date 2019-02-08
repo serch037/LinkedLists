@@ -24,6 +24,15 @@ void append(int age, char *name, node_t **theList) {
   }
 }
 
+void print(  node_t * pointerToList ) {
+node_t * temp = pointerToList;
+  printf("[");
+    while(  temp != NULL ){
+      printf("%d   %s ", temp->age, temp->name);
+      temp = temp->next;
+    }
+    printf("]");
+}
 
 void iterate(node_t *pointerToList) {
   node_t * temp = pointerToList;
