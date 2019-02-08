@@ -43,3 +43,35 @@ void print_filtered(node_t *head, char a_char) {
     }
 }
 
+void printYoungest(node_t *theList) {
+    node_t *youngest = theList;
+    node_t *i = theList->next;
+    while (i != NULL) {
+        if (i->age < youngest->age) {
+            youngest = i;
+        }
+        i = i->next;
+    }
+    if (youngest != NULL) {
+        printf("%s %d", youngest->name, youngest->age);
+    } else {
+        printf("List is empty");
+    }
+}
+
+void printOldest(node_t *theList) {
+    node_t *oldest = theList;
+    node_t *i = theList->next;
+    while (i != NULL) {
+        if (i->age > oldest->age) {
+            oldest = i;
+        }
+        i = i->next;
+    }
+    if (oldest != NULL) {
+        printf("%s %d", oldest->name, oldest->age);
+    } else {
+        printf("List is empty");
+    }
+}
+

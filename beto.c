@@ -100,7 +100,7 @@ void clearList(node_t ** theList){
   }
 }
 
-int main(void) {
+int test(void) {
   node_t * list = NULL;
   iterate(list);
   append(50, "Bono", &list);
