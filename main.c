@@ -1,6 +1,6 @@
-//
-// Created by sergio on 2/8/19.
-//
+// Alberto
+// Sergio 
+// Alexa
 
 #include <stdio.h>
 #include <stdlib.h>
