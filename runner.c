@@ -6,6 +6,7 @@
 #include <string.h>
 #include "beto.h"
 
+
 node_t *parse_csv() {
     FILE *stream = fopen("dataC.csv", "r");
     node_t *head = NULL;
@@ -26,12 +27,14 @@ double average(node_t *head) {
     double sum = 0;
     double count = 0;
     while (currNode) {
-        sum = currNode->age;
+        sum += currNode->age;
         ++count;
         currNode = currNode->next;
     }
     return sum / count;
 }
+
+
 
 void print_filtered(node_t *head, char a_char) {
     node_t *currNode = head;
@@ -42,6 +45,7 @@ void print_filtered(node_t *head, char a_char) {
         currNode = currNode->next;
     }
 }
+
 
 void printYoungest(node_t *theList) {
     node_t *youngest = theList;
