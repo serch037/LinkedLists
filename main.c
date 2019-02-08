@@ -5,9 +5,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "beto.h"
+#include "runner.h"
 
 int main () {
    int input, data;
+   node_t *head = parse_csv();
    do {
       printf("1. Adding an item to the end of the list.\n");
       printf("2. Iterating over a list.\n");
