@@ -10,9 +10,11 @@
 
 int main() {
     int input, data;
-    node_t * list = NULL;
+    node_t *list = NULL;
     iterate(list);
-    
+    char name[10];
+    int age;
+
     node_t *head = parse_csv();
     do {
         printf("1. Adding an item to the end of the list.\n");
@@ -53,7 +55,7 @@ int main() {
                 break;
             case 4:
                 //¿Falta?
-                popFirst(** theList)
+                popFirst(**theList)
                 break;
             case 5:
                 printf("%s\n",);
