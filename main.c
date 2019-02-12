@@ -1,5 +1,5 @@
 // Alberto
-// Sergio 
+// Sergio
 // Alexa
 
 #include <stdio.h>
@@ -11,17 +11,20 @@
 int main() {
     int input, data;
     node_t *list = NULL;
-    iterate(list);
     char name[10];
     int age;
+    int index;
+    node_t *n = NULL;
+    char a_char;
 
-    node_t *head = parse_csv();
+    list = parse_csv();
     do {
+        printf("\n");
         printf("1. Adding an item to the end of the list.\n");
         printf("2. Iterating over a list.\n");
         printf("3. Adding an item to the beginning of the list (pushing to the list).\n");
         printf("4. Removing the first item (popping from the list).\n");
-        printf("5. Removing the last item of the list.\n");
+        printf("5. Removing the first item of the list.\n");
         printf("6. Removing a specific item. \n");
         printf("7. Size of the linked List. \n");
         printf("8. Get element of the linked list. \n");
@@ -36,66 +39,66 @@ int main() {
         scanf("%d", &input);
         switch (input) {
             case 1:
-                printf("Give me a Name");
+                printf("\nGive me a Name: ");
                 scanf("%s", name);
-                printf("Give me an Age");
-                scanf("%s", age);
+                printf("\nGive me an Age: ");
+                scanf("%d", &age);
                 append(age, name, &list);
                 break;
             case 2:
                 iterate(list);
                 break;
             case 3:
-                printf("Give me a Name");
+                printf("\nGive me a Name: ");
                 scanf("%s", name);
-                printf("Give me an Age");
-                scanf("%s", age);
+                printf("\nGive me an Age: ");
+                scanf("%d", &age);
                 pushFirst(age, name, &list);
                 iterate(list);
                 break;
             case 4:
-                //¿Falta?
-                popFirst(**theList)
+                popFirst(&list);
                 break;
             case 5:
-                printf("%s\n",);
+                //FALTA
                 break;
             case 6:
-                printf("%s\n",);
+                printf("\nGive me a Name: ");
+                scanf("%s", name);
+                printf("\nGive me an Age: ");
+                scanf("%d", &age);
+                removeElement(age, name, &list);
                 break;
             case 7:
-                printf("Size of list: %d\n", sizeOfList(&list));
+                printf("\nSize of list: %d", sizeOfList(&list));
                 break;
             case 8:
-                printf("%s\n",);
+                printf("\nGive me an index: ");
+                scanf("%d", &index);
+                n = getElement(index, &list);
+                printf("\nName: %s\nAge: %d", n->name, n->age);
                 break;
             case 9:
                 clearList(&list);
-                iterate(list);
                 break;
             case 10:
                 print(list);
                 break;
             case 11:
-                printOldest(*theList);
-                //No estoy segura de como ponerlo para que imprima el nombre con la edad
-                printf("%s The oldest person is: \n",);
+                printOldest(list);
                 break;
             case 12:
-                printYoungest(*theList);
-                //No estoy segura de como ponerlo para que imprima el nombre con la edad
-                printf(" The youngest person is\n",);
+                printYoungest(list);
                 break;
             case 13:
-                average(*head);
-                //No estoy segura de como ponerlo para que imprima el promedio :(
-                printf("The average of the ages is: \n",);
+                printf("\nThe average of the ages is: %f\n",average(list));
                 break;
             case 14:
-                printf("\n %p Enter a character:",);
-                char a_char;
-                scanf("%c", &a_char);
-                print_filtered(head, a_char);
+                printf("\nEnter a character: ");
+                scanf(" %c", &a_char);
+                print_filtered(list, a_char);
+                break;
+            default:
                 break;
         }
     } while (input != 0);

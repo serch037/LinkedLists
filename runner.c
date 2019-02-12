@@ -10,13 +10,18 @@
 node_t *parse_csv() {
     FILE *stream = fopen("dataC.csv", "r");
     node_t *head = NULL;
-    char buffer[255];
-    while (fgets(buffer, 255, stream)) {
-        char *name = (char *) calloc(8, sizeof(char));
-        strcpy(name, strtok(buffer, ","));
-        int age = atoi(strtok(NULL, ","));
-        append(age, name, &head);
-        free(name);
+    char line[1024];
+    int firstLine = 1;
+    while (fgets(line, 1024, stream)) {
+        if(firstLine == 1){
+            firstLine = 0;
+        } else {
+            char *name = (char *) malloc(10 * sizeof(char));
+            strcpy(name, strtok(line, ","));
+            int age = atoi(strtok(NULL, ""));
+            append(age, name, &head);
+        }
+
     }
     free(stream);
     return head;
@@ -34,8 +39,6 @@ double average(node_t *head) {
     return sum / count;
 }
 
-
-
 void print_filtered(node_t *head, char a_char) {
     node_t *currNode = head;
     while (currNode) {
@@ -45,7 +48,6 @@ void print_filtered(node_t *head, char a_char) {
         currNode = currNode->next;
     }
 }
-
 
 void printYoungest(node_t *theList) {
     node_t *youngest = theList;

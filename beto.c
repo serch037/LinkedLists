@@ -7,10 +7,9 @@
 #include "beto.h"
 
 
-
 void append(int age, char *name, node_t **theList) {
   node_t *newS = (node_t *) malloc(sizeof(node_t));
-  newS ->age = age;
+  newS -> age = age;
   newS -> name = name;
   newS->next = NULL;
   if(*theList == NULL){
@@ -25,20 +24,20 @@ void append(int age, char *name, node_t **theList) {
 }
 
 void print(  node_t * pointerToList ) {
-node_t * temp = pointerToList;
+  node_t * temp = pointerToList;
   printf("[");
-    while(  temp != NULL ){
-      printf("%d   %s ", temp->age, temp->name);
-      temp = temp->next;
-    }
-    printf("]");
+  while(  temp != NULL ){
+    printf("%d   %s ", temp->age, temp->name);
+    temp = temp->next;
+  }
+  printf("]");
 }
 
 void iterate(node_t *pointerToList) {
   node_t * temp = pointerToList;
   printf("[");
   while(  temp != NULL ){
-    printf("%d %s, ", temp->age, temp->name);
+    printf("%s %d, ", temp->name, temp->age);
     temp = temp->next;
   }
   printf("]\n");
