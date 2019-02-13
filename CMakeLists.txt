@@ -3,4 +3,4 @@ project(LinkedLists)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(LinkedLists src/LinkedList.c src/LinkedList.h main.c tests/minunit.h tests/LinkedListTest.c)
+add_executable(LinkedLists beto.c beto.h runner.c main.c runner.h)
