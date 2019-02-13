@@ -21,4 +21,6 @@ void removeElement(int age, char * name, node_t ** theList);
 int sizeOfList(node_t ** theList);
 node_t * getElement(int index, node_t ** theList);
 void clearList(node_t ** theList);
+void removeLast(node_t **list);
+void removeAt(node_t **list, int pos);
 #endif //LINKEDLISTS_BETO_H

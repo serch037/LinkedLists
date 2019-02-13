@@ -24,9 +24,10 @@ int main() {
         printf("2. Iterating over a list.\n");
         printf("3. Adding an item to the beginning of the list (pushing to the list).\n");
         printf("4. Removing the first item (popping from the list).\n");
-        printf("5. Removing the first item of the list.\n");
+        printf("5. Removing last item. \n");
         printf("6. Removing a specific item. \n");
-        printf("7. Size of the linked List. \n");
+        printf("7. Removing an item by position. \n");
+        printf("8. Size of the linked List. \n");
         printf("8. Get element of the linked list. \n");
         printf("9. Clear the linked list. \n");
         printf("10. Print the linked list.\n");
@@ -35,6 +36,7 @@ int main() {
         printf("13. Print the average of ages.\n");
         printf("14. Print all names that start with a given letter.\n");
         printf("0. Exit\n");
+        printf("Enter an option: ");
 
         scanf("%d", &input);
         switch (input) {
@@ -60,7 +62,7 @@ int main() {
                 popFirst(&list);
                 break;
             case 5:
-                //FALTA
+                removeLast(&list);
                 break;
             case 6:
                 printf("\nGive me a Name: ");
@@ -70,30 +72,35 @@ int main() {
                 removeElement(age, name, &list);
                 break;
             case 7:
+                printf("\nGive me a position: ");
+                int pos;
+                scanf("%d", &pos);
+                removeAt(&list, pos);
+            case 8:
                 printf("\nSize of list: %d", sizeOfList(&list));
                 break;
-            case 8:
+            case 9:
                 printf("\nGive me an index: ");
                 scanf("%d", &index);
                 n = getElement(index, &list);
                 printf("\nName: %s\nAge: %d", n->name, n->age);
                 break;
-            case 9:
+            case 10:
                 clearList(&list);
                 break;
-            case 10:
+            case 11:
                 print(list);
                 break;
-            case 11:
+            case 12:
                 printOldest(list);
                 break;
-            case 12:
+            case 13:
                 printYoungest(list);
                 break;
-            case 13:
+            case 14:
                 printf("\nThe average of the ages is: %f\n",average(list));
                 break;
-            case 14:
+            case 15:
                 printf("\nEnter a character: ");
                 scanf(" %c", &a_char);
                 print_filtered(list, a_char);

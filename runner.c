@@ -9,6 +9,7 @@
 
 node_t *parse_csv() {
     FILE *stream = fopen("dataC.csv", "r");
+    if (stream == NULL) { perror("dataC.csv"); exit(EXIT_FAILURE); };
     node_t *head = NULL;
     char line[1024];
     int firstLine = 1;
@@ -43,10 +44,11 @@ void print_filtered(node_t *head, char a_char) {
     node_t *currNode = head;
     while (currNode) {
         if (currNode->name[0] == a_char) {
-            printf("\n%s\n", currNode->name);
+            printf("%s, ", currNode->name);
         }
         currNode = currNode->next;
     }
+    printf("\n");
 }
 
 void printYoungest(node_t *theList) {
